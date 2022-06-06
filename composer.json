@@ -1,0 +1,41 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name": "diamondstrider1/minigames",
+	"description": "Create new, custom minigames for PocketMine",
+	"type": "project",
+	"require": {
+		"pocketmine/pocketmine-mp": "4.4.0",
+		"diamondstrider1/remark": "^1.2"
+	},
+	"license": "Apache License 2.0",
+	"authors": [
+		{
+			"name": "DiamondStrider1",
+			"email": "62265561+Swift-Strider@users.noreply.github.com"
+		}
+	],
+	"scripts": {
+		"post-install-cmd": "@php tools/lazily-setup.php",
+		"lint": "vendor/bin/phpstan analyze -c config/phpstan.neon",
+		"fmt": "vendor/bin/php-cs-fixer fix --config=config/.php-cs-fixer.php",
+		"cs": "vendor/bin/php-cs-fixer fix --config=config/.php-cs-fixer.php --dry-run --diff",
+		"test": "vendor/bin/phpunit tests/phpunit",
+		"integration-test": [
+			"Composer\\Config::disableProcessTimeout",
+			"@php tools/integration-test.php"
+		]
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^1.7",
+		"phpstan/phpstan-strict-rules": "^1.2",
+		"phpstan/extension-installer": "^1.1",
+		"friendsofphp/php-cs-fixer": "^3.8",
+		"phpunit/phpunit": "^9.5",
+		"sof3/await-std": "dev-master"
+	},
+	"config": {
+		"allow-plugins": {
+			"phpstan/extension-installer": true
+		}
+	}
+}

@@ -1,0 +1,4 @@
+/build/
+/vendor/
+/config/phpstan.neon
+/.php-cs-fixer.cache

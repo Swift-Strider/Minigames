@@ -1,0 +1,8 @@
+name: Minigames
+author: DiamondStrider1
+description: Create new, custom minigames for PocketMine
+website: https://github.com/Swift-Strider/Minigames
+
+main: DiamondStrider1\Minigames\Main
+version: 0.0.1
+api: 4.4.0
